@@ -1,0 +1,57 @@
+<br>
+
+<form [formGroup]="dataform" (ngSubmit)="onSubmit()">
+
+  <div class="Name">
+    <label>
+      Name
+    </label>
+    <input id="name" type="text" formControlName="name">
+  </div>
+
+  <br>
+  
+
+  <div class="Email">
+    <label>
+      Email
+    </label>
+    <input id="email" type="text" formControlName="email">
+  </div>
+
+  <br>
+
+  <div class="feedback">
+    <label>
+      Feedback
+    </label>
+    <hr>
+    <label>
+      Great:
+      <input type="radio" formControlName="feedback" value='Great'>
+    </label>
+    <label>
+      Okay:
+      <input type="radio" formControlName="feedback" value='Okay'>
+    </label>
+    <label>
+      Not good:
+      <input type="radio" formControlName="feedback" value='Not good'>
+    </label>
+  </div>
+
+  <br>
+  <br>
+
+  <div class="comments">
+    <label>
+      Comments
+    </label>
+    <input id="comments" type="text" formControlName="comment">
+  </div>
+
+  <br>
+
+  <button class="button" type="submit">Submit</button>
+
+</form>
