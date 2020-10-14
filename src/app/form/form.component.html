@@ -1,0 +1,42 @@
+<div *ngIf="message" [ngClass]="{'message-container':true,'alert':true, 'alert-success':success ,'alert-danger':!success}" role="alert">
+    {{message}}
+</div>
+<form class="form-base" [formGroup]="form" (ngSubmit)="submit()">
+    <div class="form-group">
+        <label class="label" for="name">Name</label>
+        <input formControlName="name" type="text" class="form-control" style="max-width: 500px;" id="name">
+    </div>
+    <div class="form-group">
+        <label  class="label" for="email">Email</label>
+        <input formControlName="email" type="email" class="form-control" style="max-width: 500px;" id="email">
+    </div>
+    <label  class="label" for="feedback">Feedback</label>
+    <mat-radio-group id="feedback" formControlName="feedback">
+        <mat-radio-button style = "padding: 10px;"*ngFor="let feedb of feedbacks" [value]="feedb">
+            {{feedb}}
+         </mat-radio-button>
+    </mat-radio-group>
+    <div class="form-group">
+        <label  class="label" for="comment">Comments</label>
+        <textarea formControlName="comment" class="form-control" id="comment" style="max-width: 700px;"></textarea>
+    </div>
+    <button class="btn btn-primary" type="submit">Submit</button>
+</form>
+<table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Email</th>
+        <th scope="col">Feedback</th>
+        <th scope="col">Comment</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>{{form.value.name}}</td>
+        <td>{{form.value.email}}</td>
+        <td>{{form.value.feedback}}</td>
+        <td>{{form.value.comment}}</td>
+      </tr>
+    </tbody>
+  </table>
